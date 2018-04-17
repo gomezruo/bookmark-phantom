@@ -9,47 +9,33 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint'
-      }
-    ],
-
     loaders: [
       {
         test: /.json$/,
         loaders: [
-          'json'
+          'json-loader',
         ]
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.scss$/,
         loaders: [
-          'style',
-          'css',
-          'sass?includePaths[]=./src/assets/',
-          'postcss'
+          'style-loader',
+          'css-loader',
+          'sass-loader',
         ]
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loaders: [
-          'ng-annotate',
-          'babel'
+          'babel-loader',
         ]
       },
       {
         test: /.html$/,
         loaders: [
-          'html'
+          'html-loader',
         ]
-      },
-      {
-        test: /.html$/,
-        loaders: 'string-replace'
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -68,7 +54,6 @@ module.exports = {
       'window.jQuery': 'jquery',
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: conf.path.src('index.html')
     }),
@@ -78,7 +63,6 @@ module.exports = {
     new ExtractTextPlugin('index-[contenthash].css'),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
   ],
-  postcss: () => [autoprefixer],
   output: {
     path: path.join(process.cwd(), conf.paths.dist),
     filename: '[name]-[hash].js'
