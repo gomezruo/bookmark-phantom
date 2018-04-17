@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans+Condensed:300|Source+Sans+Pro');
+
+@import "./theme.scss";
+
+body {
+  font-family: $body-font;
+  font-size: 16px;
+  color: $body-color;
+}
+
+a {
+  cursor: pointer;
+  font-family: $feature-font;
+  color: $brand-primary;
+}
+
+h1, h2, h3 {
+  color: $header-background;
+  font-family: $feature-font;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 46px;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+p {
+  margin: 0px;
+}
+
+* + p {
+  margin-top: 15px;
+}
