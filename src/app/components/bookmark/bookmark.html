@@ -1,0 +1,11 @@
+<div class="bookmark">
+  <h4 class="bookmark__title">{{ $ctrl.bookmark }}</h4>
+  <div ng-if="!$ctrl.cmpDisplay" class="bookmark__edit">
+    <a ng-click="$ctrl.editBookmark()" alt="edit bookmark">
+      <span class="icon icon-edit"></span>
+    </a>
+    <a ng-click="$ctrl.deleteBookmark()" alt="delete bookmark">
+      <span class="icon icon-delete"></span>
+    </a>
+  </div>
+</div>

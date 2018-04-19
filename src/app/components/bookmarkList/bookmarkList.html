@@ -1,5 +1,6 @@
 <div class="bookmark-list">
-  <div class="bookmark-list__item" ng-repeat="bookmark in $ctrl.bookmarks">
+  <h2 class="page-title">Your Saved Bookmarks</h2>
+  <div class="bookmark-list__item" ng-repeat="bookmark in $ctrl.BookmarksService.bookmarks track by $index">
     <cmp-bookmark cmp-data="bookmark"></cmp-bookmark>
   </div>
 </div>

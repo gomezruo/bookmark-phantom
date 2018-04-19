@@ -7,14 +7,8 @@ class controller {
     this.BookmarksService = BookmarksService;
   }
 
-  getPageInfo() {
-    return {
-      title: this.$stateParams.title,
-    };
-  }
-
   $onInit() {
-    this.bookmarks = this.BookmarksService.bookmarks;
+    this.BookmarksService.getBookmarks();
   }
 }
 

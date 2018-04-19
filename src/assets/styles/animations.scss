@@ -1,0 +1,37 @@
+
+
+@mixin super-rainbow($property) {
+  @keyframes super-rainbow {
+
+  0% {
+      $property: white;
+  }
+
+  15% {
+      $property: red;
+  }
+
+  30% {
+      $property: orange;
+  }
+
+  45% {
+      $property: yellow;
+  }
+
+  60% {
+      $property: green;
+  }
+
+  75% {
+      $property: blue;
+  }
+
+  90% {
+      $property: violet;
+  }
+
+  100% {
+      $property: white;
+  }
+}

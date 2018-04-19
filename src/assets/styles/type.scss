@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans+Condensed:300|Source+Sans+Pro');
 
-@import "./theme.scss";
+@import '../icons/icons';
+
+@import 'theme';
 
 body {
   font-family: $body-font;
@@ -15,7 +17,7 @@ a {
 }
 
 h1, h2, h3 {
-  color: $header-background;
+  color: $header-color;
   font-family: $feature-font;
   margin: 0px;
 }
@@ -26,10 +28,26 @@ h1 {
 
 h2 {
   font-size: 34px;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 
 h3 {
   font-size: 22px;
+}
+
+.page-title {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    width: 80px;
+    height: 3px;
+    background-color: $header-background;
+  }
 }
 
 p {

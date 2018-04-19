@@ -18,15 +18,12 @@ function routesConfig(
     .state('overview', {
       url: '/',
       component: 'cmpOverview',
-      params: {
-        title: 'Overview',
-      },
     })
     .state('results', {
       url: '/results',
       component: 'cmpResults',
       params: {
-        title: 'Results',
+        bookmark: {},
       },
     });
 

@@ -1,0 +1,24 @@
+<div class="bookmark-form">
+  <h2 class="page-title">Add a Bookmark</h2>
+
+  <div class="form">
+    <form class="form" name="bookmarkForm" ng-submit="$ctrl.addBookmark()">
+      <input
+        class="form__input form__input--text"
+        type="text"
+        ng-change="$ctrl.resetStatus()"
+        ng-model="$ctrl.BookmarksService.newBookmark"
+        placeholder="Website Url..."
+        maxlength="75" />
+      <div>
+        <button class="button button--feature form__submit" ng-disabled="!$ctrl.BookmarksService.newBookmark">
+          <span>Add</span>
+          <span ng-if="!$ctrl.BookmarksService.newBookmark" class="hover-status">Something's missing...</span>
+        </button>
+        <div ng-if="$ctrl.BookmarksService.bookmarkStatus" class="form__validation">
+          <span>{{ $ctrl.BookmarksService.bookmarkStatus }}</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

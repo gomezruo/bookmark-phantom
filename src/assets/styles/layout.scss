@@ -1,7 +1,47 @@
+@import 'theme';
+
+$site-border: 8px;
+$site-border--large: 32px;
+$container-padding: 32px;
+$container-padding--large: 64px;
+
+$screen-md: 640px;
+
+body {
+  min-height: 100vh;
+  padding: $site-border;
+  outline: $site-border solid $black;
+  outline-offset: -$site-border;
+
+  @media (min-width: $screen-md) {
+    padding: $site-border--large;
+    outline: $site-border--large solid $black;
+    outline-offset: -$site-border--large;
+  }
+}
+
 
 * {
   margin: 0px;
   padding: 0px;
+
+  box-sizing: border-box;
+}
+
+.container {
+  padding: $container-padding;
+
+  @media (min-width: $screen-md) {
+    padding: $container-padding--large;
+  }
+}
+
+.page-title + * {
+  margin-top: $container-padding;
+
+  @media (min-width: $screen-md) {
+    margin-top: $container-padding--large;
+  }
 }
 
 img {

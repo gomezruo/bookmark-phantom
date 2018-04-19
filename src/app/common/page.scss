@@ -1,0 +1,37 @@
+@import 'layout';
+
+.page {
+  margin: -$container-padding;
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    padding: $container-padding;
+    width: 100%;
+    max-width: 640px;
+  }
+
+  &__action {
+    margin-top: $container-padding;
+  }
+
+  &--split &__item {
+    max-width: 380px + ($container-padding * 2);
+  }
+
+  @media (min-width: $screen-md) {
+    margin: -$container-padding--large;
+
+    &__item {
+      padding: $container-padding--large;
+    }
+
+    &__action {
+      margin-top: $container-padding--large;
+    }
+
+    &--split &__item {
+      max-width: 380px + ($container-padding--large * 2);
+    }
+  }
+}

@@ -1,3 +1,5 @@
+'use strict';
+
 // Core
 import angular from 'angular';
 

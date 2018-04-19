@@ -1,0 +1,57 @@
+@import 'theme';
+@import 'layout';
+
+.form {
+  width: 100%;
+  text-align: left;
+
+  & > * + * {
+    margin-top: 32px;
+  }
+
+  &__input {
+    font-size: 16px;
+    width: 100%;
+    padding: 10px 8px;
+    border: none;
+
+    &:focus {
+      outline: 5px solid $header-background;
+      outline-offset: 0px;
+    }
+  }
+
+  &__submit {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    span {
+      display: inline-block;
+      width: 100%;
+
+      &.hover-status {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        padding: 0 20px;
+        opacity: 0;
+        transition: opacity .1s;
+        font-size: 14px;
+      }
+    }
+
+    &:hover .hover-status {
+      opacity: 1;
+    }
+  }
+
+  &__validation {
+    display: inline-block;
+    color: red;
+    vertical-align: middle;
+    margin-left: 32px;
+  }
+}

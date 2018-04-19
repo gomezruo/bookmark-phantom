@@ -1,7 +1,7 @@
 // Imports
-@import "assets/styles/layout";
-@import "assets/styles/theme";
 @import "assets/styles/type";
+@import "app/common/button";
+@import "app/common/page";
 
 body {
   background-color: $body-background;

@@ -1,6 +1,9 @@
 const webpack = require('webpack');
 const conf = require('./gulp.conf');
 const path = require('path');
+const env = process.env.NODE_ENV || 'development';
+
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
@@ -19,7 +22,12 @@ module.exports = {
         loaders: [
           'style-loader',
           'css-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['./src/assets/styles']
+            }
+          }
         ]
       },
       {
@@ -47,6 +55,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: conf.path.src('index.html')
     }),
+    // new UglifyJsPlugin(),
   ],
   devtool: 'source-map',
   output: {
